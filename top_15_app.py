@@ -66,7 +66,7 @@ explainer = LimeTabularExplainer(X_train_explainer,
                                  discretize_continuous=False,
                                 class_names=['Not Top 15','Top 15'])
 
-
+@st.cache
 def st_shap(plot, height=None):
     shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
     components.html(shap_html, height=height)
